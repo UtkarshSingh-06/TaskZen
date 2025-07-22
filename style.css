@@ -1,88 +1,105 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* === General Styles === */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FCEEC9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
 }
 
-body{
-    background-color: #FCEEC9;
-    color: #333;
-    min-height: 100vh;
-    padding: 2rem;
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.container{
-    max-width: 600px;
-    margin: auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+/* === Heading === */
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.input-group{
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-#task-input{
-    flex: 1;
-    padding: 0.75rem;
-    border: 2px solid #FFBE54;
-    border-radius: 0.5 rem;
-    font-size: 1rem;
-    outline: none;
-}
-
-#add-task{
-    background-color: #e4281f;
-    color: white;
-    border: none;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background color 0.3s ease;
-}
-
-#add-task.hover{
-    background-color: #c01f18;
-}
-
-/* === Task List Styling === */
-#task-list {
-  list-style: none;
-}
-
-.task-item {
-  background-color: #fff5dc;
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-  border-radius: 0.5rem;
+/* === Input Section === */
+.task-input {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-left: 5px solid #FFBE54;
-  transition: transform 0.2s ease;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-.task-item:hover {
-  transform: scale(1.01);
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #FFBE54;
+  border-radius: 6px;
 }
 
-/* === Delete Button Styling === */
-.delete-btn {
+.task-input button {
+  padding: 10px 15px;
   background-color: #e4281f;
   color: white;
   border: none;
-  padding: 0.4rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 
-.delete-btn:hover {
-  background-color: #c01f18;
+.task-input button:hover {
+  background-color: #c51f17;
+}
+
+/* === Filters === */
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  border: 1px solid #FFBE54;
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filters button.active,
+.filters button:hover {
+  background-color: #FFBE54;
+}
+
+/* === Task List === */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff6e5;
+  border: 1px solid #FFBE54;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+  background-color: #eee;
+}
+
+/* === Task Buttons === */
+.task-list button {
+  background-color: transparent;
+  border: none;
+  color: #e4281f;
+  font-size: 1em;
+  cursor: pointer;
 }
